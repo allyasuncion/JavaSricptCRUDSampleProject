@@ -37,7 +37,8 @@ function insertNewRecord(data) {
         cell4 = newRow.insertCell(3);
                 cell4.innerHTML = data.perPrice;
         cell5 = newRow.insertCell(4);
-                cell5.innerHTML = `<button onClick = "onEdit(this)">Edit</button><button onClick = "onDelete(this)">Delete</button>`;
+                cell5.innerHTML = `<button onClick = "onEdit(this)">Edit</button>
+                                                <button onClick = "onDelete(this)">Delete</button>`;
 }
 
 // Editing the data
@@ -62,7 +63,7 @@ function updateRecord(formData) {
 function onDelete(td) {
         if ( confirm("Do you want to delete this record?") ) {
                 row = td.parentElement.parentElement;
-                document.getElementById('storelist').deleteRow(row.rowIndex);
+                document.getElementById('storeList').deleteRow(row.rowIndex);
                 resetForm();
         } 
 }
